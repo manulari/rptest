@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: manulari/rptest
+  base_url: https://quirky-stonebraker-84d38f.netlify.app/
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
