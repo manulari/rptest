@@ -1,8 +1,8 @@
 backend:
   name: github
   repo: manulari/rptest
-  base_url: https://3ssli916pk.execute-api.eu-central-1.amazonaws.com/prod
-  auth_endpoint: /auth
+  base_url: https://3ssli916pk.execute-api.eu-central-1.amazonaws.com
+  auth_endpoint: /prod/auth
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
