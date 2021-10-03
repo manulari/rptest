@@ -6,8 +6,9 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: '_posts/'
+  - name: 'all_pages'
+    label: 'All Pages'
+    folder: '_all_pages'
     fields:
-      - { name: Title }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'text' }
