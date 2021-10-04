@@ -1,6 +1,9 @@
 entries:
   - path: xyzz
     title: xzy
+    subentries:
+      - path: /
+        title: startseite
   - title: atest
     path: atest
     subentries:
