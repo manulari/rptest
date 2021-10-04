@@ -1,7 +1,22 @@
 <nav>
-    {% for item in site.data.navigation %}
-      <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
-        {{ item.name }}
+  <ul>
+    {% for item in site.data.nav.entries %}
+    <li>
+      <a href="{{ item.path }}" {% if page.url == item.path %}style="color: red;"{% endif %}>
+        {{ item.title }}
       </a>
+      {% if item.subentries %}
+      <ul>
+        {% for subitem in item.subentries %}
+        <li>
+          <a href="{{ subitem.path }}" {% if page.url == subitem.path %}style="color: red;"{% endif %}>
+            {{ subitem.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
     {% endfor %}
-  </nav>
+  </ul>
+</nav>

@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: github
   repo: manulari/rptest
@@ -6,9 +7,69 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
+  - name: 'global_config'
+    label: 'Einstellungen'
+    files:
+      - label: "Menü"
+        name: 'nav'
+        file: '_data/nav.yml'
+        editor:
+          preview: false
+        fields:
+          - name: 'entries'
+            label: 'Menüpunkte'
+            label_singular: 'Menüpunkt'
+            widget: 'list'
+            fields:
+              - name: 'title'
+                label: 'Text'
+                widget: 'string'
+              - name: 'path'
+                label: 'Link'
+                widget: 'relation'
+                collection: 'all_pages'
+                value_field: 'permalink'
+                search_fields: ['title', 'permalink']
+                display_fields: ['permalink', 'title']
+              - name: 'subentries'
+                label: 'Unterpunkte'
+                widget: 'list'
+                fields:
+                  - name: 'title'
+                    label: 'Text'
+                    widget: 'string'
+                  - name: 'path'
+                    label: 'Link'
+                    widget: 'relation'
+                    collection: 'all_pages'
+                    value_field: 'permalink'
+                    search_fields: ['title', 'permalink']
+                    display_fields: ['permalink', 'title']
   - name: 'all_pages'
     label: 'All Pages'
     folder: '_all_pages'
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    fields:
+      - { label: 'Dateiname', name: 'permalink', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    summary: '{{permalink}}: {{title}}'
+    sortable_fields: ['title', 'permalink']
+    slug: '{{permalink}}'
+  - name: 'subpages'
+    label: 'Subpage'
+    folder: '_subpages'
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    nested:
+      depth: 2
+      summary: '{{sort_key}} {{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'text' }
+      - { label: 'Reihenfolge', name: 'sort_key', widget: 'number', value_type: 'int' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    sortable_fields: [ 'sort_key' ]

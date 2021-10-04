@@ -1,0 +1,8 @@
+entries:
+  - path: xyzz
+    title: xzy
+  - title: atest
+    path: atest
+    subentries:
+      - path: xyzz
+        title: xzy
