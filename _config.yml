@@ -2,6 +2,9 @@ collections:
   all_pages:
     output: true
     permalink: /:name/index.html
+sass:
+  sass_dir: _sass
+site_language: de
 
 defaults:
   - scope:

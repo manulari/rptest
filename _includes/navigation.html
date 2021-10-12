@@ -1,5 +1,4 @@
-<nav>
-  {{ page.url }}
+<nav class="mainnav">
   <ul>
     {% for item in site.data.nav.entries %}
     <li>
@@ -9,8 +8,7 @@
       {% else %}
       {% assign itempath = '/' | append: item.path %}
       {% endif %}
-      {{ itempath }}==
-      <a href="{{ itempath }}" {% if page.url == itempath %}style="color: red;"{% endif %}>
+      <a href="{{ itempath }}" {% if page.url == itempath %}class="active"{% endif %}>
         {{ item.title }}
       </a>
       {% if item.subentries %}
@@ -23,8 +21,7 @@
       {% else %}
       {% assign subitempath = '/' | append: subitem.path %}
       {% endif %}
-      {{ subitempath }}==
-          <a href="{{ subitempath }}" {% if page.url == subitempath %}style="color: red;"{% endif %}>
+          <a href="{{ subitempath }}" {% if page.url == subitempath %}class="active"{% endif %}>
             {{ subitem.title }}
           </a>
         </li>

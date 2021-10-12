@@ -1,11 +1,17 @@
 entries:
-  - path: xyzz
-    title: xzy
+  - title: Startseite
+    path: /
+  - title: Syntax
+    path: syntax
+  - title: A
+    path: a
     subentries:
-      - path: /
-        title: startseite
-  - title: atest
-    path: atest
+      - title: A-A
+        path: a-a
+      - title: A-B
+        path: a-b
+  - title: B
+    path: b
     subentries:
-      - path: xyzz
-        title: xzy
+      - title: B-A
+        path: b-a
