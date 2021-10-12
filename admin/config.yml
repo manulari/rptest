@@ -8,31 +8,32 @@ backend:
 media_folder: 'assets/uploads'
 collections:
   - name: 'global_config'
-    label: 'Einstellungen'
+    label: 'Settings'
     files:
-      - label: "Menü"
+      - label: "Menu"
         name: 'nav'
         file: '_data/nav.yml'
         editor:
           preview: false
         fields:
           - name: 'entries'
-            label: 'Menüpunkte'
-            label_singular: 'Menüpunkt'
+            label: 'entries'
+            label_singular: 'entry'
             widget: 'list'
             fields:
               - name: 'title'
-                label: 'Text'
+                label: 'text'
                 widget: 'string'
               - name: 'path'
-                label: 'Link'
+                label: 'link'
                 widget: 'relation'
                 collection: 'all_pages'
                 value_field: 'permalink'
                 search_fields: ['title', 'permalink']
                 display_fields: ['permalink', 'title']
               - name: 'subentries'
-                label: 'Unterpunkte'
+                label: 'subentries'
+                label_singular: 'subentry'
                 widget: 'list'
                 fields:
                   - name: 'title'
@@ -46,14 +47,15 @@ collections:
                     search_fields: ['title', 'permalink']
                     display_fields: ['permalink', 'title']
   - name: 'all_pages'
-    label: 'All Pages'
+    label: 'Pages'
+    label_singular: 'page'
     folder: '_all_pages'
     extension: md
     format: yaml-frontmatter
     create: true
     fields:
-      - { label: 'Dateiname', name: 'permalink', widget: 'string' }
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Link', name: 'permalink', widget: 'string', hint: "Part of URL after https://example.com/. Only use English letters, numbers, and -" }
+      - { label: 'Title', name: 'title', widget: 'string', hint: "The title shows up as the name of the tab in the browser." }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     summary: '{{permalink}}: {{title}}'
     sortable_fields: ['title', 'permalink']
