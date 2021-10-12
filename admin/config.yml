@@ -58,18 +58,3 @@ collections:
     summary: '{{permalink}}: {{title}}'
     sortable_fields: ['title', 'permalink']
     slug: '{{permalink}}'
-  - name: 'subpages'
-    label: 'Subpage'
-    folder: '_subpages'
-    extension: md
-    format: yaml-frontmatter
-    create: true
-    nested:
-      depth: 2
-      summary: '{{sort_key}} {{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Reihenfolge', name: 'sort_key', widget: 'number', value_type: 'int' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-    sortable_fields: [ 'sort_key' ]

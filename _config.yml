@@ -2,9 +2,6 @@ collections:
   all_pages:
     output: true
     permalink: /:name/index.html
-  subpages:
-    output: true
-    permalink: /:path
   authors:
     output: true
 
