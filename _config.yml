@@ -4,6 +4,8 @@ collections:
     permalink: /:name/index.html
 sass:
   sass_dir: _sass
+  sourcemap: always
+  style: compressed
 site_language: de
 
 defaults:
