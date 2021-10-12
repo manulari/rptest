@@ -2,20 +2,8 @@ collections:
   all_pages:
     output: true
     permalink: /:name/index.html
-  authors:
-    output: true
 
 defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
     values:
