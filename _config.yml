@@ -1,15 +1,19 @@
+site_language: de
+
 collections:
   all_pages:
     output: true
     permalink: /:name/index.html
-sass:
-  sass_dir: _sass
-  sourcemap: always
-  style: compressed
-site_language: de
-
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+
+sass:
+  sass_dir: _sass
+  sourcemap: always
+  style: compressed
+kramdown:
+  syntax_highlighter_opts:
+    disable : true

@@ -54,7 +54,7 @@ collections:
     format: yaml-frontmatter
     create: true
     fields:
-      - { label: 'Link', name: 'permalink', widget: 'string', hint: "Part of URL after https://example.com/. Only use English letters, numbers, and -" }
+      - { label: 'Link', name: 'permalink', widget: 'string', hint: "Part of URL after https://example.com/. Use only English letters, numbers, and -" }
       - { label: 'Title', name: 'title', widget: 'string', hint: "The title shows up as the name of the tab in the browser." }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     summary: '{{permalink}}: {{title}}'

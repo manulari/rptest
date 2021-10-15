@@ -2,5 +2,10 @@
 ---
 @import 'normalize';
 @import 'myreset';
+@import 'contentStyle';
 
 .mainnav .active { color: red; }
+
+.maincontent {
+  @include maincontent;
+}
