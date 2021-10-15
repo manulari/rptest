@@ -9,7 +9,7 @@ What to change to get started:
 * `CNAME`
 * configure dns
  
-* `\_layouts/default.html`
-* `\_includes/navigation.html` (optional)
+* `_layouts/default.html`
+* `_includes/navigation.html` (optional)
 * `css/style.scss`
-* `\_sass/contentStyle.scss` for styles that should be applied in both preview and on finished website
+* `_sass/contentStyle.scss` for styles that should be applied in both preview and on finished website
