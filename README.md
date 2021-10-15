@@ -1,3 +1,13 @@
-### Netlify CMS Jekyll Notes
+## Basic NetlifyCMS + github pages + jekyll template
 
-This branch contains the basic blog you get if you follow the Jekyll step by step tutorial https://jekyllrb.com/docs/step-by-step/01-setup/
+What to change to get started:
+
+* `_config.yml`:
+  - `site_language`
+* `admin/config.yml`:
+  - `repo`
+ 
+* `\_layouts/default.html`
+* `\_includes/navigation.html` (optional)
+* `css/style.scss`
+* `\_sass/contentStyle.scss` for styles that should be applied in both preview and on finished website
