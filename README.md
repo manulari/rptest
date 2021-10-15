@@ -6,6 +6,8 @@ What to change to get started:
   - `site_language`
 * `admin/config.yml`:
   - `repo`
+* `CNAME`
+* configure dns
  
 * `\_layouts/default.html`
 * `\_includes/navigation.html` (optional)
