@@ -1,15 +1,26 @@
 @mixin maincontent {
 
+// color for jump target when jumping within page
 $flash-color: #aae4e5;
 
-code {
-  color: red;
+$link-color: #1a8ca6;
+$link-color-multiplied: rgb(0, 127, 156);
+$link-color-hover: #00728c;//#252525;
+
+a { opacity: 0.9; color: $link-color-multiplied; }
+a:hover { opacity: 1; color: $link-color-hover; }
+
+div.imglink {
+  display: inline-block;
+  vertical-align: top;
+  width: min-content;
 }
+
+// flash target when jumping within page
 .named-anchor:target+* {
   animation-name: flash-target;
   animation-duration: 2s;
 }
-
 @keyframes flash-target {
   from, to {
   }

@@ -12,6 +12,27 @@
     -->
     <script src="netlify-cms.js"></script>
 <script>
+function htmlspecialchars(str) {
+    var map = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;" // ' -> &apos; for XML only
+    };
+    return str.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+function htmlspecialchars_decode(str) {
+    var map = {
+        "&amp;": "&",
+        "&lt;": "<",
+        "&gt;": ">",
+        "&quot;": "\"",
+        "&#39;": "'"
+    };
+    return str.replace(/(&amp;|&lt;|&gt;|&quot;|&#39;)/g, function(m) { return map[m]; });
+}
+
 CMS.registerPreviewStyle("preview.css");
 
 CMS.registerEditorComponent({
@@ -36,7 +57,7 @@ CMS.registerEditorComponent({
   //
   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-  pattern: /^<div class="named-anchor" id="(.*?)"<\/div>$/m,
+  pattern: /^<div class="named-anchor" id="(.*?)"<\/div>$/,
   // Given a RegExp Match object
   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
   // return an object with one property for each field defined in `fields`.
@@ -63,6 +84,50 @@ CMS.registerEditorComponent({
     //return [ h('div', { class: "named-anchor" }, [ h('a', { id: data.id }) ] ) ];
   }
 });
+
+CMS.registerEditorComponent({
+  id: 'imglink',
+  label: 'Bildlink',
+  fields: [
+    {
+      name: 'image',
+      label: 'Bild',
+      widget: 'image',
+      media_library: {
+        allow_multiple: false,
+      }
+    },
+    {
+      name: 'href',
+      label: 'Link',
+      widget: 'string',
+    },
+    {
+      name: 'caption',
+      label: 'Subtitel',
+      widget: 'string',
+    }
+  ],
+  pattern: /^<div class="imglink"><a target="_blank" href="(.*?)"><img src="(.*?)" \/><div>(.*?)<\/div><\/a><\/div>$/,
+  fromBlock: function(match) {
+    return {
+      image: match[2],
+      href: match[1],
+      caption: htmlspecialchars_decode(match[3])
+    };
+  },
+  toBlock: function(data) {
+    let caption = htmlspecialchars(data.caption);
+    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${data.image}" \/><div>${caption}<\/div><\/a><\/div>`;
+  },
+  toPreview: function(data, getAsset, fields) {
+    let caption = htmlspecialchars(data.caption);
+    let imageField = fields && fields.find(f => f.get('widget') === 'image');
+    const src = getAsset(data.image, imageField);
+    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${src}" \/><div>${caption}<\/div><\/a><\/div>`;
+  }
+});
+
 
 </script>
   </body>
