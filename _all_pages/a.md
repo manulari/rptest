@@ -40,7 +40,7 @@ a
 
 a
 
-<div class="named-anchor"><a id="hier"></a></div>
+<div class="named-anchor" id="hier"></div>
 
 hier
 

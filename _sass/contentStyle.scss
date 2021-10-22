@@ -1,5 +1,22 @@
 @mixin maincontent {
+
+$flash-color: #aae4e5;
+
 code {
   color: red;
 }
+.named-anchor:target+* {
+  animation-name: flash-target;
+  animation-duration: 2s;
+}
+
+@keyframes flash-target {
+  from, to {
+  }
+  20% {
+    background-color: $flash-color;
+  }
+}
+
+
 }
