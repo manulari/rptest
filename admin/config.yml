@@ -6,6 +6,7 @@ backend:
   auth_endpoint: /prod/auth
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
+site_url: https://rollingpoint.manulari.eu/
 collections:
   - name: 'global_config'
     label: 'Settings'
@@ -60,3 +61,4 @@ collections:
     summary: '{{permalink}}: {{title}}'
     sortable_fields: ['title', 'permalink']
     slug: '{{permalink}}'
+    preview_path: "/{{permalink}}"
