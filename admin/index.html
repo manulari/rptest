@@ -108,7 +108,7 @@ CMS.registerEditorComponent({
       widget: 'string',
     }
   ],
-  pattern: /^<div class="imglink"><a target="_blank" href="(.*?)"><img src="(.*?)" \/><div>(.*?)<\/div><\/a><\/div>$/,
+  pattern: /^<div class="imglink"><a target="_blank" href="(.*?)"><img src="(.*?)" alt="" \/><div>(.*?)<\/div><\/a><\/div>$/,
   fromBlock: function(match) {
     return {
       image: match[2],
@@ -118,13 +118,13 @@ CMS.registerEditorComponent({
   },
   toBlock: function(data) {
     let caption = htmlspecialchars(data.caption);
-    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${data.image}" \/><div>${caption}<\/div><\/a><\/div>`;
+    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${data.image}" alt="" \/><div>${caption}<\/div><\/a><\/div>`;
   },
   toPreview: function(data, getAsset, fields) {
     let caption = htmlspecialchars(data.caption);
     let imageField = fields && fields.find(f => f.get('widget') === 'image');
     const src = getAsset(data.image, imageField);
-    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${src}" \/><div>${caption}<\/div><\/a><\/div>`;
+    return `<div class="imglink"><a target="_blank" href="${data.href}"><img src="${src}" alt="" \/><div>${caption}<\/div><\/a><\/div>`;
   }
 });
 

@@ -108,4 +108,4 @@ Bei "alt text" eine kurze Beschreibung des Bildes eingeben - ist für Blinde und
 
 Bild mit Link
 
-<div class="imglink"><a target="_blank" href="https://www.rollingpoint.at"><img src="/assets/uploads/smile.png" /><div></div></a></div>
+<div class="imglink"><a target="_blank" href="https://www.rollingpoint.at"><img src="/assets/uploads/smile.png" alt="" /><div></div></a></div>
