@@ -1,6 +1,12 @@
 ---
 ---
-@import 'myreset';
 @import 'contentStyle';
+@include attop;
+@import 'variables';
+@import 'myreset';
 
-@include maincontent;
+@include unscoped;
+
+body {
+  @include maincontent;
+}
