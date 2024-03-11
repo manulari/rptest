@@ -6,6 +6,7 @@ What to change to get started:
   - `site_language`
 * `admin/config.yml`:
   - `repo`
+  - `site_url`
 * `CNAME`
 * configure dns
  
