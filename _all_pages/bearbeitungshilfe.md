@@ -4,8 +4,6 @@ title: Bearbeitungshilfe
 ---
 Folgende Bearbeitungsmöglichkeiten gibt es:
 
-
-
 Überschriften:
 
 Überschriften sind immer eine ganze Zeile.
@@ -89,7 +87,7 @@ An einem anderen Punkt in der Seite kann ein Link eingefügt werden, der zu dies
 
 Dieser [Link](#hierher-wird-gesprungen) springt zum Hinspringpunkt mit der ID hierher-wird-gesprungen.
 
-___
+- - -
 
 Links auf andere Seiten:
 
@@ -97,11 +95,11 @@ Um auf andere Unterseiten zu verlinken, für "URL of the Link" das eingeben, was
 
 Man kann auch zu einem Hinspringpunkt auf einer anderen Seite springen, also z.B. auf den [Dienstags-Kurs innerhalb der Kurse-Seite](/kurse#di), mit /kurse#di.
 
-___
+- - -
 
 Bilder:
 
 "+" klicken, dann Image auswählen. "Choose an image" anklicken, und hier mit "Upload" das gewünschte Bild hochladen. Die momentane nutzbare Seitenbreite ist 540 Pixel, Bilder bitte in etwa in dieser Breite hochladen. Das hochgeladene Bild auswählen und "Choose selected" klicken.\
 Bei "alt text" eine kurze Beschreibung des Bildes eingeben - ist für Blinde und Menschen mit Sehbehinderung, sowie für Suchmaschinen relevant.
 
-![maRia und Christian tanzen auf einer Stiege](/assets/uploads/dsc_1901_klein.jpg "rollingpoint")
+![maRia und Christian tanzen auf einer Stiege](/assets/uploads/smile.png "rollingpoint")
